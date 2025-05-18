@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    line-height: 1.6;
+}
+
+.header {
+    background: linear-gradient(45deg, #000080, #1e90ff);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    transform: skewY(-3deg);
+}
+
+nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000080;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: #00008015;
+    color: #1e90ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.timeline-item {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: #f8f9ff;
+    border-left: 4px solid #1e90ff;
+    position: relative;
+    border-radius: 0 5px 5px 0;
+}
+
+.timeline-item::before {
+    content: attr(data-year);
+    position: absolute;
+    left: -100px;
+    top: 15px;
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+.fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.fact-card {
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 5px solid #1e90ff;
+    transition: 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+    background: #000080;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .timeline-item::before {
+        left: 0;
+        top: -25px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+.hero-section {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #1e90ff;
+    color: white!important;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
+}
+
+.masterpieces {
+    margin: 5rem 0;
+}
+
+.masterpieces h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #000080;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.art-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.art-card:hover {
+    transform: translateY(-10px);
+}
+
+.art-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 4px solid #1e90ff;
+}
+
+.art-info {
+    padding: 1.5rem;
+    background: white;
+}
+
+.art-info h3 {
+    color: #000080;
+    margin-bottom: 0.5rem;
+}
+
+.art-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quick-facts {
+    margin: 5rem 0;
+}
+
+.quick-facts h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #000080;
+}
+
+.quote-block {
+    background: #f8f9ff;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 4rem 0;
+}
+
+.quote-block p {
+    font-size: 1.5rem;
+    color: #000080;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.quote-block span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        width: 100%;
+    }
+    
+    .art-card img {
+        height: 300px;
+    }
+}
